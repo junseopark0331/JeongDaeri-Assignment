@@ -14,6 +14,12 @@
 		78BB36232AF53BA1003E5B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BB36212AF53BA1003E5B77 /* LaunchScreen.storyboard */; };
 		78BB362C2AF53F2D003E5B77 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78BB362B2AF53F2D003E5B77 /* SnapKit */; };
 		78BB362F2AF53F45003E5B77 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 78BB362E2AF53F45003E5B77 /* Then */; };
+		78BB363A2AF542A2003E5B77 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB36372AF542A2003E5B77 /* NanumGothicBold.otf */; };
+		78BB363B2AF542A2003E5B77 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB36382AF542A2003E5B77 /* NanumGothic.otf */; };
+		78BB363C2AF542A2003E5B77 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB36392AF542A2003E5B77 /* NanumGothicExtraBold.otf */; };
+		78BB36412AF54317003E5B77 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB36402AF54317003E5B77 /* BaseVC.swift */; };
+		78BB36442AF54333003E5B77 /* UIColor + HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB36432AF54333003E5B77 /* UIColor + HexColor.swift */; };
+		78BB36472AF5434B003E5B77 /* UIView + Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB36462AF5434B003E5B77 /* UIView + Subviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		78BB361F2AF53BA1003E5B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BB36222AF53BA1003E5B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78BB36242AF53BA1003E5B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78BB36372AF542A2003E5B77 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = ../../../../../../../../Downloads/NanumFontSetup_OTF_GOTHIC/NanumGothicBold.otf; sourceTree = "<group>"; };
+		78BB36382AF542A2003E5B77 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothic.otf; path = ../../../../../../../../Downloads/NanumFontSetup_OTF_GOTHIC/NanumGothic.otf; sourceTree = "<group>"; };
+		78BB36392AF542A2003E5B77 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicExtraBold.otf; path = ../../../../../../../../Downloads/NanumFontSetup_OTF_GOTHIC/NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		78BB36402AF54317003E5B77 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		78BB36432AF54333003E5B77 /* UIColor + HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + HexColor.swift"; sourceTree = "<group>"; };
+		78BB36462AF5434B003E5B77 /* UIView + Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Subviews.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +70,124 @@
 		78BB36152AF53B9F003E5B77 /* JeongDaeri-Homework1 */ = {
 			isa = PBXGroup;
 			children = (
-				78BB36162AF53B9F003E5B77 /* AppDelegate.swift */,
-				78BB36182AF53B9F003E5B77 /* SceneDelegate.swift */,
-				78BB361A2AF53B9F003E5B77 /* ViewController.swift */,
-				78BB361F2AF53BA1003E5B77 /* Assets.xcassets */,
-				78BB36212AF53BA1003E5B77 /* LaunchScreen.storyboard */,
-				78BB36242AF53BA1003E5B77 /* Info.plist */,
+				78BB36302AF54211003E5B77 /* Resources */,
+				78BB36312AF5421C003E5B77 /* Sources */,
+				78BB36322AF54223003E5B77 /* Support */,
 			);
 			path = "JeongDaeri-Homework1";
+			sourceTree = "<group>";
+		};
+		78BB36302AF54211003E5B77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36332AF5426C003E5B77 /* Assets */,
+				78BB36342AF54276003E5B77 /* Fonts */,
+				78BB36352AF5427D003E5B77 /* Launch */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		78BB36312AF5421C003E5B77 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				78BB363D2AF542D0003E5B77 /* Application */,
+				78BB363E2AF542E6003E5B77 /* Utility */,
+				78BB36482AF54360003E5B77 /* Presentation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		78BB36322AF54223003E5B77 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36242AF53BA1003E5B77 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		78BB36332AF5426C003E5B77 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				78BB361F2AF53BA1003E5B77 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		78BB36342AF54276003E5B77 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36362AF54295003E5B77 /* Nanum */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		78BB36352AF5427D003E5B77 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36212AF53BA1003E5B77 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		78BB36362AF54295003E5B77 /* Nanum */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36382AF542A2003E5B77 /* NanumGothic.otf */,
+				78BB36372AF542A2003E5B77 /* NanumGothicBold.otf */,
+				78BB36392AF542A2003E5B77 /* NanumGothicExtraBold.otf */,
+			);
+			path = Nanum;
+			sourceTree = "<group>";
+		};
+		78BB363D2AF542D0003E5B77 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36162AF53B9F003E5B77 /* AppDelegate.swift */,
+				78BB36182AF53B9F003E5B77 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		78BB363E2AF542E6003E5B77 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				78BB363F2AF542F6003E5B77 /* Base */,
+				78BB36422AF54321003E5B77 /* UIColor */,
+				78BB36452AF5433B003E5B77 /* UIView */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		78BB363F2AF542F6003E5B77 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36402AF54317003E5B77 /* BaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		78BB36422AF54321003E5B77 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36432AF54333003E5B77 /* UIColor + HexColor.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		78BB36452AF5433B003E5B77 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				78BB36462AF5434B003E5B77 /* UIView + Subviews.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		78BB36482AF54360003E5B77 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				78BB361A2AF53B9F003E5B77 /* ViewController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BB363A2AF542A2003E5B77 /* NanumGothicBold.otf in Resources */,
 				78BB36232AF53BA1003E5B77 /* LaunchScreen.storyboard in Resources */,
 				78BB36202AF53BA1003E5B77 /* Assets.xcassets in Resources */,
+				78BB363C2AF542A2003E5B77 /* NanumGothicExtraBold.otf in Resources */,
+				78BB363B2AF542A2003E5B77 /* NanumGothic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				78BB361B2AF53B9F003E5B77 /* ViewController.swift in Sources */,
+				78BB36442AF54333003E5B77 /* UIColor + HexColor.swift in Sources */,
 				78BB36172AF53B9F003E5B77 /* AppDelegate.swift in Sources */,
 				78BB36192AF53B9F003E5B77 /* SceneDelegate.swift in Sources */,
+				78BB36472AF5434B003E5B77 /* UIView + Subviews.swift in Sources */,
+				78BB36412AF54317003E5B77 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T78F59TU2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "JeongDaeri-Homework1/Info.plist";
+				INFOPLIST_FILE = "JeongDaeri-Homework1/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,7 +449,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T78F59TU2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "JeongDaeri-Homework1/Info.plist";
+				INFOPLIST_FILE = "JeongDaeri-Homework1/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
