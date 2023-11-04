@@ -3,7 +3,7 @@ import UIKit
 extension UIFont {
     
     enum Family: String {
-        case black = "Black",
+        case regular = "",
              bold = "Bold",
              extraBold = "ExtraBold"
     }
