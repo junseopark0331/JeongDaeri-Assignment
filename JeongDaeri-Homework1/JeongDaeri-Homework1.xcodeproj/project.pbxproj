@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7863B28A2AF67B0E0048F1E4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863B2892AF67B0E0048F1E4 /* Font.swift */; };
 		78BB36172AF53B9F003E5B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB36162AF53B9F003E5B77 /* AppDelegate.swift */; };
 		78BB36192AF53B9F003E5B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB36182AF53B9F003E5B77 /* SceneDelegate.swift */; };
-		78BB361B2AF53B9F003E5B77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB361A2AF53B9F003E5B77 /* ViewController.swift */; };
+		78BB361B2AF53B9F003E5B77 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB361A2AF53B9F003E5B77 /* MainVC.swift */; };
 		78BB36202AF53BA1003E5B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BB361F2AF53BA1003E5B77 /* Assets.xcassets */; };
 		78BB36232AF53BA1003E5B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BB36212AF53BA1003E5B77 /* LaunchScreen.storyboard */; };
 		78BB362C2AF53F2D003E5B77 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78BB362B2AF53F2D003E5B77 /* SnapKit */; };
@@ -23,10 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7863B2892AF67B0E0048F1E4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		78BB36132AF53B9F003E5B77 /* JeongDaeri-Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JeongDaeri-Homework1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BB36162AF53B9F003E5B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78BB36182AF53B9F003E5B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78BB361A2AF53B9F003E5B77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78BB361A2AF53B9F003E5B77 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		78BB361F2AF53BA1003E5B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BB36222AF53BA1003E5B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78BB36242AF53BA1003E5B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7863B2872AF67AF70048F1E4 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				7863B2882AF67B020048F1E4 /* Fonts */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		7863B2882AF67B020048F1E4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7863B2892AF67B0E0048F1E4 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		78BB360A2AF53B9F003E5B77 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +108,7 @@
 		78BB36312AF5421C003E5B77 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7863B2872AF67AF70048F1E4 /* DesignSystem */,
 				78BB363D2AF542D0003E5B77 /* Application */,
 				78BB363E2AF542E6003E5B77 /* Utility */,
 				78BB36482AF54360003E5B77 /* Presentation */,
@@ -185,7 +204,7 @@
 		78BB36482AF54360003E5B77 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				78BB361A2AF53B9F003E5B77 /* ViewController.swift */,
+				78BB361A2AF53B9F003E5B77 /* MainVC.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -271,8 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78BB361B2AF53B9F003E5B77 /* ViewController.swift in Sources */,
+				78BB361B2AF53B9F003E5B77 /* MainVC.swift in Sources */,
 				78BB36442AF54333003E5B77 /* UIColor + HexColor.swift in Sources */,
+				7863B28A2AF67B0E0048F1E4 /* Font.swift in Sources */,
 				78BB36172AF53B9F003E5B77 /* AppDelegate.swift in Sources */,
 				78BB36192AF53B9F003E5B77 /* SceneDelegate.swift in Sources */,
 				78BB36472AF5434B003E5B77 /* UIView + Subviews.swift in Sources */,
