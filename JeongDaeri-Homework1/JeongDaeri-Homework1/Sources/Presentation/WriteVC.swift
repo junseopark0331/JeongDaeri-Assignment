@@ -1,8 +1,12 @@
 import UIKit
 
-class MainVC: BaseVC {
+final class WriteVC: BaseVC {
     
     private let scrollView = UIScrollView().then {
+        $0.backgroundColor = .white
+    }
+    
+    private let contentView = UIView().then {
         $0.backgroundColor = .white
     }
     
@@ -32,7 +36,7 @@ class MainVC: BaseVC {
         }
     }
     
-    lazy var nickNameCountLabel = UILabel().then {
+    private let nickNameCountLabel = UILabel().then {
         $0.textAlignment = .right
         $0.textColor = UIColor(rgb: 0x878787)
         $0.font = .JeongDaeri(size: 14, family: .regular)
@@ -46,7 +50,7 @@ class MainVC: BaseVC {
         $0.alignment = .fill
     }
     
-    private let oneLineProfileLabel = TitleLabel().then {
+    private let profileLabel = TitleLabel().then {
         $0.text = "한 줄 프로필"
     }
     
@@ -91,7 +95,7 @@ class MainVC: BaseVC {
         $0.layer.cornerRadius = 8
         
         if $0.text.isEmpty {
-            $0.text = "다른 사람에게 나를 소개할 수 있도록 \n 자신의 활동을 자세하게 적어주세요."
+            $0.text = "다른 사람에게 나를 소개할 수 있도록 \n자신의 활동을 자세하게 적어주세요."
             $0.font = .JeongDaeri(size: 14, family: .regular)
             $0.textColor = UIColor(rgb: 0x696B72)
             $0.delegate = self
@@ -107,25 +111,59 @@ class MainVC: BaseVC {
     }
     
     private let connectedWebsiteLabel = TitleLabel().then {
-        $0.text = "연결된 웹사이트"
+        $0.text = "웹사이트 연결"
     }
     
+    lazy var website1TextView = UITextView().then {
+        $0.backgroundColor = UIColor.white
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(rgb: 0xDADBDE).cgColor
+        $0.layer.cornerRadius = 8
+        
+        if $0.text.isEmpty {
+            $0.text = "SNS 또는 홈페이지를 연결해주세요."
+            $0.font = .JeongDaeri(size: 14, family: .regular)
+            $0.textColor = UIColor(rgb: 0x696B72)
+            $0.delegate = self
+            $0.contentMode = .top
+        }
+    }
+    
+    private lazy var completeButton = UIButton().then {
+        $0.setTitle("완료", for: .normal)
+        $0.titleLabel?.font = .JeongDaeri(size: 18, family: .extraBold)
+        $0.setTitleColor(UIColor(rgb: 0xFFFFFF), for: .normal)
+        $0.backgroundColor = UIColor(rgb: 0x8391A1)
+        $0.layer.cornerRadius = 8
+        $0.clipsToBounds = true
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setup()
         addView()
         setLayout()
     }
     
+    override func setup() {
+        self.hideKeyboardWhenTappedAround()
+    }
+    
     override func addView() {
-        view.addSubviews(
-            scrollView,
+        
+        self.view.addSubview(scrollView)
+        
+        self.scrollView.addSubview(contentView)
+        
+        contentView.addSubviews(
             nickNameStackView,
             profileStackView,
-            introductionStackView
+            introductionStackView,
+            connectedWebsiteLabel,
+            website1TextView,
+            completeButton
         )
         [
             nickNameLabel,
@@ -135,7 +173,7 @@ class MainVC: BaseVC {
             nickNameStackView.addArrangedSubview($0)
         }
         [
-            oneLineProfileLabel,
+            profileLabel,
             profileTextView,
             profileCountLabel
         ].forEach{
@@ -149,56 +187,75 @@ class MainVC: BaseVC {
             introductionStackView.addArrangedSubview($0)
         }
         
-        scrollView.addSubview(<#T##view: UIView##UIView#>)
-        
     }
     
     override func setLayout() {
         
-        self.scrollView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
-        self.nickNameStackView.snp.makeConstraints {
-            $0.height.equalTo(111)
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(bound.height * 0.06)
-            $0.leading.trailing.equalToSuperview().inset(16)
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultLow // 제약조건의 우선순위
+        contentViewHeight.isActive = true
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.snp.width)
         }
-
-        self.nickNameTextView.snp.makeConstraints {
+        nickNameStackView.snp.makeConstraints {
+            $0.height.equalTo(111)
+            $0.top.equalTo(contentView)
+            $0.leading.trailing.equalTo(contentView).inset(16)
+        }
+        nickNameTextView.snp.makeConstraints {
             $0.height.equalTo(52)
         }
-        
-        self.profileStackView.snp.makeConstraints {
+        profileStackView.snp.makeConstraints {
             $0.height.equalTo(111)
             $0.top.equalTo(nickNameTextView.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalTo(contentView).inset(16)
         }
-
-        self.profileTextView.snp.makeConstraints {
+        profileTextView.snp.makeConstraints {
             $0.height.equalTo(52)
         }
-        
-        self.introductionStackView.snp.makeConstraints {
+        introductionStackView.snp.makeConstraints {
             $0.height.equalTo(259)
             $0.top.equalTo(profileStackView.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalTo(contentView).inset(16)
         }
-
-        self.profileTextView.snp.makeConstraints {
+        profileTextView.snp.makeConstraints {
             $0.height.equalTo(200)
         }
-        
+        connectedWebsiteLabel.snp.makeConstraints {
+            $0.top.equalTo(introductionStackView.snp.bottom).offset(10)
+            $0.leading.equalTo(contentView).offset(16)
+        }
+        website1TextView.snp.makeConstraints {
+            $0.height.equalTo(40)
+            $0.top.equalTo(connectedWebsiteLabel.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(contentView).inset(16)
+        }
+        completeButton.snp.makeConstraints {
+            $0.height.equalTo(56)
+            $0.bottom.equalTo(contentView.snp.bottom).inset(100)
+            $0.leading.trailing.equalTo(contentView).inset(22)
+        }
     }
+    
+//    @objc func
+    
+    
+    
 }
 
-extension MainVC: UITextViewDelegate {
+extension WriteVC: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
+        
+        textView.layer.borderColor = UIColor(rgb: 0x4B84F1).cgColor
+        
         if textView.textColor == .green {
             textView.text = nil
             textView.textColor = .blue
@@ -206,9 +263,17 @@ extension MainVC: UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
+        
+        textView.layer.borderColor = UIColor(rgb: 0xDADBDE).cgColor
+        
+        if textView == nickNameTextView && textView.text.isEmpty {
             textView.text = "닉네임을 입력해주세요"
+        } else if textView == profileTextView && textView.text.isEmpty {
+            textView.text = "자신을 표현할 한 줄 소개입니다."
+        } else if textView == introductionTextView && textView.text.isEmpty{ 
+            textView.text = "다른 사람에게 나를 소개할 수 있도록 \n자신의 활동을 자세하게 적어주세요."
         }
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -225,10 +290,10 @@ extension MainVC: UITextViewDelegate {
             return changedText.count < 30
         } else {
             introductionCountLabel.text = "\(changedText.count)/1000"
-            return changedText.count < 30
+            return changedText.count < 1000
         }
         
         return false
     }
-
+    
 }
