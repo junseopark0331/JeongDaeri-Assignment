@@ -136,6 +136,7 @@ final class WriteVC: BaseVC {
         $0.backgroundColor = UIColor(rgb: 0x8391A1)
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+//        $0.addTarget(self, action: #selector(confirmationButtonTapped), for: .touchUpInside)
     }
     
     
@@ -192,7 +193,8 @@ final class WriteVC: BaseVC {
     override func setLayout() {
         
         scrollView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
@@ -243,7 +245,17 @@ final class WriteVC: BaseVC {
         }
     }
     
-//    @objc func
+//    @objc func confirmationButtonTapped(_ sender: UIButton) {
+//        NotificationCenter.default.post(
+//            name: <#T##NSNotification.Name#>,
+//            object: nil,
+//            userInfo: [
+//                    "nickName": nickNameTextView.text,
+//                    "profile": profileTextView.text,
+//                    "introduction": introductionTextView.text
+//                      ]
+//        )
+//    }
     
     
     

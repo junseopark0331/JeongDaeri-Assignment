@@ -1,8 +1,21 @@
-//
-//  TitleLabel.swift
-//  JeongDaeri-Homework1
-//
-//  Created by 박준서 on 11/4/23.
-//
+import UIKit
 
-import Foundation
+public final class TitleLabel: UILabel {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    func setupView(){
+        textColor = UIColor(rgb: 0x2B2B2B)
+        textAlignment = .left
+        font = .JeongDaeri(size: 16, family: .extraBold)
+    }
+}
+

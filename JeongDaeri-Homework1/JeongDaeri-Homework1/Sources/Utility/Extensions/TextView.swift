@@ -1,8 +1,14 @@
-//
-//  TextView.swift
-//  JeongDaeri-Homework1
-//
-//  Created by 박준서 on 11/6/23.
-//
+import UIKit
 
-import Foundation
+extension BaseVC {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
